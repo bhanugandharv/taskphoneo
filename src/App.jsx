@@ -1,9 +1,10 @@
-import React from 'react'
+
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './App.css';
+import './App.css'; // Add styles there
 
 const reviews = [
   {
@@ -12,6 +13,7 @@ const reviews = [
     companyName: "ABC Corp",
     review: "This is a great product! I highly recommend it.",
     rating: 5,
+    image: "/download.jpg"
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const reviews = [
     companyName: "XYZ Inc",
     review: "I had a wonderful experience with this service.",
     rating: 4,
+    image: "/download.jpg"
   },
   {
     id: 3,
@@ -26,46 +29,58 @@ const reviews = [
     companyName: "Tech Solutions",
     review: "The quality of the product is top-notch.",
     rating: 5,
-  }]
-
-
-
+    image: "/download.jpg"
+  }
+];
 
 const App = () => {
-
-  // const fetchData = async () => {
-  //   const response = await fetch('https://api.example.com/reviews')
-  //   const data = await response.json()
-  //   return data
-  // }
   return (
     <>
-
       <h1>Customer Reviews</h1>
 
-      <Swiper
-        modules={[Pagination]}
-        pagination={{ clickable: true }}
-        spaceBetween={30}
-        slidesPerView={1}
-        loop={true}
-      >
+      {/* Desktop View: Grid */}
+      <div className="desktop-reviews">
         {reviews.map((review) => (
-          <SwiperSlide key={review.id}>
-            <div key={review.id} className="review-card">
-              <h2>{review.name}</h2>
-              <h3>{review.companyName}</h3>
-              <p>{review.review}</p>
-              <p>Rating: {review.rating} stars</p>
-            </div>
-          </SwiperSlide>
+          <div key={review.id} className="review-card">
+            <img src={review.image} alt={`${review.name}`} className="review-img" />
+            <h2>{review.name}</h2>
+            <h3>{review.companyName}</h3>
+            <p>{review.review}</p>
+            <p>Rating: {review.rating} stars</p>
+          </div>
 
         ))}
-      </Swiper>
+      </div>
+
+      {/* Mobile View: Swiper */}
+      <div className="mobile-reviews">
+        <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+        >
+          {reviews.map((review) => (
+            <SwiperSlide key={review.id}>
+              <div key={review.id} className="review-card">
+                <img src={review.image} alt={`${review.name}`} className="review-img" />
+                <h2>{review.name}</h2>
+                <h3>{review.companyName}</h3>
+                <p>{review.review}</p>
+                <p>Rating: {review.rating} stars</p>
+              </div>
+
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
+  );
+};
+
+export default App;
 
 
-  )
-}
 
-export default App
+
