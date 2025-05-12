@@ -1,0 +1,118 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 2rem 1rem 1rem;
+  color: #222;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+} */
+
+.review-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.review-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.review-card p:last-child {
+  font-weight: 600;
+  color: #f39c12;
+}
+
+.swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  margin: 0 5px;
+  transition: background 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .review-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .review-card h3 {
+    font-size: 1rem;
+  }
+
+  .review-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .review-card {
+    padding: 1rem;
+  }
+
+  .review-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .review-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .review-card p {
+    font-size: 0.9rem;
+  }
+}
